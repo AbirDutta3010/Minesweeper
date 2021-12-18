@@ -1,0 +1,758 @@
+/* A game based on the concept of Minesweeper
+ * By Abir Dutta
+ */
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class Minesweeper extends JFrame implements ActionListener
+{
+    JFrame f;
+    JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50;
+    JLabel l;
+    String s;
+    int c=0;
+    Minesweeper()
+    {
+        
+        f=new JFrame("Minesweeper Clone");
+        f.setSize(168,380);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setLayout(null);
+        f.setLocationRelativeTo(null);
+        f.setResizable(false);
+
+        l=new JLabel("Score: ");
+        l.setBounds(30,300,100,50);
+        f.add(l);
+
+        b1=new JButton(".");
+        b2=new JButton(".");
+        b3=new JButton(".");
+        b4=new JButton(".");
+        b5=new JButton(".");
+        b6=new JButton(".");
+        b7=new JButton(".");
+        b8=new JButton(".");
+        b9=new JButton(".");
+        b10=new JButton(".");
+        b11=new JButton(".");
+        b12=new JButton(".");
+        b13=new JButton(".");
+        b14=new JButton(".");
+        b15=new JButton(".");
+        b16=new JButton(".");
+        b17=new JButton(".");
+        b18=new JButton(".");
+        b19=new JButton(".");
+        b20=new JButton(".");
+        b21=new JButton(".");
+        b22=new JButton(".");
+        b23=new JButton(".");
+        b24=new JButton(".");
+        b25=new JButton(".");
+        b26=new JButton(".");
+        b27=new JButton(".");
+        b28=new JButton(".");
+        b29=new JButton(".");
+        b30=new JButton(".");
+        b31=new JButton(".");
+        b32=new JButton(".");
+        b33=new JButton(".");
+        b34=new JButton(".");
+        b35=new JButton(".");
+        b36=new JButton(".");
+        b37=new JButton(".");
+        b38=new JButton(".");
+        b39=new JButton(".");
+        b40=new JButton(".");
+        b41=new JButton(".");
+        b42=new JButton(".");
+        b43=new JButton(".");
+        b44=new JButton(".");
+        b45=new JButton(".");
+        b46=new JButton(".");
+        b47=new JButton(".");
+        b48=new JButton(".");
+        b49=new JButton(".");
+        b50=new JButton(".");
+
+        b1.setBounds(0,0,30,30);
+        b2.setBounds(30,0,30,30);
+        b3.setBounds(60,0,30,30);
+        b4.setBounds(90,0,30,30);
+        b5.setBounds(120,0,30,30);
+        b6.setBounds(0,30,30,30);
+        b7.setBounds(30,30,30,30);
+        b8.setBounds(60,30,30,30);
+        b9.setBounds(90,30,30,30);
+        b10.setBounds(120,30,30,30);
+
+        b11.setBounds(0,60,30,30);
+        b12.setBounds(30,60,30,30);
+        b13.setBounds(60,60,30,30);
+        b14.setBounds(90,60,30,30);
+        b15.setBounds(120,60,30,30);
+        b16.setBounds(0,90,30,30);
+        b17.setBounds(30,90,30,30);
+        b18.setBounds(60,90,30,30);
+        b19.setBounds(90,90,30,30);
+        b20.setBounds(120,90,30,30);
+
+        b21.setBounds(0,120,30,30);
+        b22.setBounds(30,120,30,30);
+        b23.setBounds(60,120,30,30);
+        b24.setBounds(90,120,30,30);
+        b25.setBounds(120,120,30,30);
+        b26.setBounds(0,150,30,30);
+        b27.setBounds(30,150,30,30);
+        b28.setBounds(60,150,30,30);
+        b29.setBounds(90,150,30,30);
+        b30.setBounds(120,150,30,30);
+
+        b31.setBounds(0,180,30,30);
+        b32.setBounds(30,180,30,30);
+        b33.setBounds(60,180,30,30);
+        b34.setBounds(90,180,30,30);
+        b35.setBounds(120,180,30,30);
+        b36.setBounds(0,210,30,30);
+        b37.setBounds(30,210,30,30);
+        b38.setBounds(60,210,30,30);
+        b39.setBounds(90,210,30,30);
+        b40.setBounds(120,210,30,30);
+
+        b41.setBounds(0,240,30,30);
+        b42.setBounds(30,240,30,30);
+        b43.setBounds(60,240,30,30);
+        b44.setBounds(90,240,30,30);
+        b45.setBounds(120,240,30,30);
+        b46.setBounds(0,270,30,30);
+        b47.setBounds(30,270,30,30);
+        b48.setBounds(60,270,30,30);
+        b49.setBounds(90,270,30,30);
+        b50.setBounds(120,270,30,30);
+
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+        b5.addActionListener(this);
+        b6.addActionListener(this);
+        b7.addActionListener(this);
+        b8.addActionListener(this);
+        b9.addActionListener(this);
+        b10.addActionListener(this);
+        b11.addActionListener(this);
+        b12.addActionListener(this);
+        b13.addActionListener(this);
+        b14.addActionListener(this);
+        b15.addActionListener(this);
+        b16.addActionListener(this);
+        b17.addActionListener(this);
+        b18.addActionListener(this);
+        b19.addActionListener(this);
+        b20.addActionListener(this);
+        b21.addActionListener(this);
+        b22.addActionListener(this);
+        b23.addActionListener(this);
+        b24.addActionListener(this);
+        b25.addActionListener(this);
+        b26.addActionListener(this);
+        b27.addActionListener(this);
+        b28.addActionListener(this);
+        b29.addActionListener(this);
+        b30.addActionListener(this);
+        b31.addActionListener(this);
+        b32.addActionListener(this);
+        b33.addActionListener(this);
+        b34.addActionListener(this);
+        b35.addActionListener(this);
+        b36.addActionListener(this);
+        b37.addActionListener(this);
+        b38.addActionListener(this);
+        b39.addActionListener(this);
+        b40.addActionListener(this);
+        b41.addActionListener(this);
+        b42.addActionListener(this);
+        b43.addActionListener(this);
+        b44.addActionListener(this);
+        b45.addActionListener(this);
+        b46.addActionListener(this);
+        b47.addActionListener(this);
+        b48.addActionListener(this);
+        b49.addActionListener(this);
+        b50.addActionListener(this);
+
+        f.add(b1);
+        f.add(b2);
+        f.add(b3);
+        f.add(b4);
+        f.add(b5);
+        f.add(b6);
+        f.add(b7);
+        f.add(b8);
+        f.add(b9);
+        f.add(b10);
+        f.add(b11);
+        f.add(b12);
+        f.add(b13);
+        f.add(b14);
+        f.add(b15);
+        f.add(b16);
+        f.add(b17);
+        f.add(b18);
+        f.add(b19);
+        f.add(b20);
+        f.add(b21);
+        f.add(b22);
+        f.add(b23);
+        f.add(b24);
+        f.add(b25);
+        f.add(b26);
+        f.add(b27);
+        f.add(b28);
+        f.add(b29);
+        f.add(b30);
+        f.add(b31);
+        f.add(b32);
+        f.add(b33);
+        f.add(b34);
+        f.add(b35);
+        f.add(b36);
+        f.add(b37);
+        f.add(b38);
+        f.add(b39);
+        f.add(b40);
+        f.add(b41);
+        f.add(b42);
+        f.add(b43);
+        f.add(b44);
+        f.add(b45);
+        f.add(b46);
+        f.add(b47);
+        f.add(b48);
+        f.add(b49);
+        f.add(b50);
+
+        f.setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e)
+    {
+        if(e.getSource()==b1)
+        {
+            c=c+1;
+            b1.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b2)
+        {
+            c=c+1;
+            b2.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b3)
+        {
+            b3.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b4)
+        {
+            c=c+1;
+            b4.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b5)
+        {
+            c=c+1;
+            b5.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b6)
+        {
+            c=c+1;
+            b6.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b8)
+        {
+            c=c+1;
+            b8.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b9)
+        {
+            c=c+1;
+            b9.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b10)
+        {
+            c=c+1;
+            b10.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b11)
+        {
+            c=c+1;
+            b11.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b13)
+        {
+            c=c+1;
+            b13.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b14)
+        {
+            c=c+1;
+            b14.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b16)
+        {
+            c=c+1;
+            b16.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b17)
+        {
+            c=c+1;
+            b17.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b19)
+        {
+            c=c+1;
+            b19.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b20)
+        {
+            c=c+1;
+            b20.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b22)
+        {
+            c=c+1;
+            b22.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b24)
+        {
+            c=c+1;
+            b24.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b27)
+        {
+            c=c+1;
+            b27.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b28)
+        {
+            c=c+1;
+            b28.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b29)
+        {
+            c=c+1;
+            b29.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b30)
+        {
+            c=c+1;
+            b30.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b31)
+        {
+            c=c+1;
+            b31.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b33)
+        {
+            c=c+1;
+            b33.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b35)
+        {
+            c=c+1;
+            b35.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b37)
+        {
+            c=c+1;
+            b6.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b38)
+        {
+            c=c+1;
+            b38.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b39)
+        {
+            c=c+1;
+            b39.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b41)
+        {
+            c=c+1;
+            b41.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b43)
+        {
+            c=c+1;
+            b43.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b44)
+        {
+            c=c+1;
+            b44.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b45)
+        {
+            c=c+1;
+            b45.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b47)
+        {
+            c=c+1;
+            b47.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b49)
+        {
+            c=c+1;
+            b49.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b50)
+        {
+            c=c+1;
+            b50.setVisible(false);
+            s=Integer.toString(c);
+            l.setText("Score: "+s);
+        }
+        if(e.getSource()==b7)
+        {
+            b7.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b12)
+        {
+            b12.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b15)
+        {
+            b15.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b18)
+        {
+            b18.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b21)
+        {
+            b21.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b23)
+        {
+            b23.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b25)
+        {
+            b25.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b26)
+        {
+            b26.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b32)
+        {
+            b32.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b34)
+        {
+            b34.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b36)
+        {
+            b36.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b40)
+        {
+            b40.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b42)
+        {
+            b42.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b46)
+        {
+            b46.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+        if(e.getSource()==b48)
+        {
+            b7.setVisible(false);
+            f.setVisible(false);
+            JFrame f1=new JFrame("Result");
+            f1.setSize(300,200);
+            f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f1.setLayout(null);
+            f1.setLocationRelativeTo(null);
+            f1.setResizable(false);
+
+            s=Integer.toString(c);
+            l.setText("You stepped on a mine!! Total Score : "+s);
+            l.setBounds(20,50,250,70);
+            f1.add(l);
+            f1.setVisible(true);
+        }
+    }
+
+    public static void main(String[] args)
+    {
+        new Minesweeper();
+    }
+}
